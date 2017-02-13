@@ -53,7 +53,6 @@ public class Program {
                         fWriter.write("\r\n\t}" + "\r\n");
                         fWriter.write("\r\n");
                         
-                        
                         //getter part
                         fWriter.write("\tpublic " + types[1] + " get" + var.substring(0,1).toUpperCase() + var.substring(1) + "() {" + "\t\t//this is getter\r\n");
                         fWriter.write("\t\treturn " + var + ";");
@@ -63,9 +62,7 @@ public class Program {
                     }
                     
                 }
-                                    
-                    
-                    
+                
                 fWriter.write("\r\n}");
                 fWriter.close();
             }
