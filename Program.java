@@ -31,13 +31,13 @@ public class Program {
                     String[] types = attr.split(":");
                     
                     //variable declaration part
-                    fWriter.write("     private " + types[1] + " " + types[0] + ";\r\n");
+                    fWriter.write("\tprivate " + types[1] + " " + types[0] + ";\r\n");
                 }
                 
                 fWriter.write("\r\n");
                 //constructor part
-                fWriter.write("     public " + tokens[0] + "()" + " " + "{     " + "//this is constructor\r\n");
-                fWriter.write("     }" + "\r\n");
+                fWriter.write("\tpublic " + tokens[0] + "()" + " " + "{" + "\t\t//this is constructor\r\n");
+                fWriter.write("\t}" + "\r\n");
                 fWriter.write("\r\n");
                 
                 for (String attr : attributes) {
@@ -48,16 +48,16 @@ public class Program {
                         for (String var : vars) {
                             
                         //setter part
-                        fWriter.write("     public void set" + var.substring(0,1).toUpperCase() + var.substring(1) + "(" + types[1] + " " + var + ")" + " " + "{   " + "    //this is setter\r\n");
-                        fWriter.write("           this." + var + " = " + var + ";");
-                        fWriter.write("\r\n     }" + "\r\n");
+                        fWriter.write("\tpublic void set" + var.substring(0,1).toUpperCase() + var.substring(1) + "(" + types[1] + " " + var + ")" + " " + "{" + "\t\t//this is setter\r\n");
+                        fWriter.write("\t\tthis." + var + " = " + var + ";");
+                        fWriter.write("\r\n\t}" + "\r\n");
                         fWriter.write("\r\n");
                         
                         
                         //getter part
-                        fWriter.write("     public " + types[1] + " get" + var + "() {" + "    //this is getter\r\n");
-                        
-                        fWriter.write("\r\n     }" + "\r\n");
+                        fWriter.write("\tpublic " + types[1] + " get" + var.substring(0,1).toUpperCase() + var.substring(1) + "() {" + "\t\t//this is getter\r\n");
+                        fWriter.write("\t\treturn " + var + ";");
+                        fWriter.write("\r\n\t}" + "\r\n");
                         fWriter.write("\r\n");
                         }
                     }
